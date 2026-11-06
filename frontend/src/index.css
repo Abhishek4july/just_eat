@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Ensure all native buttons show pointer cursor and have basic active feedback */
+button {
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+/* Reusable button utility */
+.btn {
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.btn:active {
+  opacity: 0.9;
+  transform: scale(0.98);
+}

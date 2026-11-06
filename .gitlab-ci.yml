@@ -1,0 +1,28 @@
+stages:
+  - build
+  - test
+build_backend:
+  stage: build
+  image: docker:latest
+
+  services:
+    - docker:dind
+
+  variables:
+    DOCKER_DRIVER: overlay2
+
+  script:
+    - docker build -t justeat-backend ./backend
+
+test_backend:
+  stage: test
+
+  image: python:3.12
+
+  before_script:
+    - cd backend
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+
+  script:
+  - pytest -v
