@@ -1,3 +1,19 @@
+## 🔐 Demo Login Credentials
+
+Use the following credentials to explore the application:
+
+### Customer Account
+- **Email:** `customer@test.com`
+- **Password:** `customer123`
+
+### Restaurant Owner Account
+- **Email:** `owner@test.com`
+- **Password:** `owner123`
+
+> **Note:** These are demo credentials intended for testing purposes only.
+
+
+
 # 🍔 Foodie - Restaurant Ordering Platform
 
 Foodie is a full-stack restaurant ordering platform inspired by Zomato. It allows customers to browse restaurants, view menus, manage carts, place orders, track order history, save favorite restaurants, and receive personalized recommendations. Restaurant owners can manage their restaurants, menus, and orders through a dedicated dashboard.
