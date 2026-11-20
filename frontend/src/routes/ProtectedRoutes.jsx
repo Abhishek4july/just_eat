@@ -1,14 +1,21 @@
+
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function ProtectedRoute({ children, allowedRoles }) {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated || !user) {
     return <Navigate to="/" replace />;
   }
 
-  if (!allowedRoles.includes(user.role)) {
+  const userRole = user.role?.toUpperCase();
+
+  const normalizedRoles = allowedRoles.map((role) =>
+    role.toUpperCase()
+  );
+
+  if (!normalizedRoles.includes(userRole)) {
     return <Navigate to="/" replace />;
   }
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash, FaUtensils } from "react-icons/fa";
 import { login, getCurrentUser } from "../../services/authService";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../features/auth/authSlice";
 
@@ -61,11 +61,13 @@ function Login() {
       );
 
       // Step 5: Redirect based on user role (CUSTOMER or OWNER)
-      if (user.role === "CUSTOMER") {
-        navigate("/customer");
-      } else {
-        navigate("/owner");
-      }
+      if (user.role?.toUpperCase() === "CUSTOMER") {
+  navigate("/customer");
+} else if (user.role?.toUpperCase() === "RESTAURANT_OWNER") {
+  navigate("/owner");
+} else {
+  setError("Invalid user role.");
+}
     } catch (error) {
       console.error(error.response?.data || error.message);
 
@@ -165,6 +167,17 @@ function Login() {
             )}
           </button>
         </form>
+
+        <p className="text-center text-gray-600 mt-6">
+  Don't have an account?{" "}
+  <Link
+    to="/register"
+    className="text-orange-500 font-semibold hover:underline"
+  >
+    Register
+  </Link>
+</p>
+
       </div>
     </div>
   );

@@ -7,6 +7,8 @@ from app.services.user_service import change_password
 from app.core.logger import logger
 from app.core.exceptions import InvalidCredentialsException
 from sqlalchemy.orm import Session
+from app.schemas.user import RegisterUser
+from app.services.auth_service import register_user
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from app.dependencies.auth import get_current_user
@@ -73,6 +75,24 @@ def get_me(
         "email": current_user.email,
         "role": current_user.role,
     }
+
+
+
+@router.post(
+    "/register",
+    response_model=UserResponse,
+    status_code=status.HTTP_201_CREATED
+)
+def register(
+    user_data: RegisterUser,
+    db: Session = Depends(get_db)
+):
+    return register_user(
+        db=db,
+        user_data=user_data
+    )
+
+
 
 
 @router.get("/owner-only")

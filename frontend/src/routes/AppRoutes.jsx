@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-
+import Register from "../pages/auth/Register.jsx";
 import Login from "../pages/auth/Login.jsx";
 
 import CustomerLayout from "../layouts/CustomerLayout.jsx";
@@ -29,7 +29,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-
+      <Route path="/register" element={<Register />} />
       {/* CUSTOMER */}
       <Route
         path="/customer"

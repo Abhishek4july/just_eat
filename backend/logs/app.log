@@ -1374,3 +1374,34 @@
 2026-07-24 03:04:40,609 | INFO | justeat | Creating restaurant 'tghbejcnd' for owner owner@test.com
 2026-07-24 03:04:42,070 | INFO | justeat | Restaurant 'tghbejcnd' created successfully.
 2026-07-24 03:05:51,876 | INFO | justeat | Logger is working
+2026-11-21 02:45:58,584 | INFO | justeat | Logger is working
+2026-11-21 02:45:58,964 | ERROR | justeat | POST /auth/login -> Current password is incorrect.
+2026-11-21 02:46:35,667 | INFO | justeat | Logger is working
+2026-11-21 02:46:35,961 | ERROR | justeat | POST /auth/login -> Current password is incorrect.
+2026-11-21 02:46:43,774 | INFO | justeat | Logger is working
+2026-11-21 02:46:44,062 | ERROR | justeat | POST /auth/login -> Current password is incorrect.
+2026-11-21 02:47:07,671 | INFO | justeat | Logger is working
+2026-11-21 02:47:07,955 | ERROR | justeat | POST /auth/login -> Current password is incorrect.
+2026-11-21 02:49:07,038 | INFO | justeat | Logger is working
+2026-11-21 02:49:28,707 | INFO | justeat | Logger is working
+2026-11-21 03:04:02,894 | INFO | justeat | Logger is working
+2026-11-21 03:04:03,218 | ERROR | justeat | POST /auth/login -> Current password is incorrect.
+2026-11-21 03:09:31,903 | ERROR | justeat | POST /auth/register -> Email already registered
+2026-11-21 03:10:29,854 | INFO | justeat | Logger is working
+2026-11-21 03:11:07,844 | INFO | justeat | Logger is working
+2026-11-21 03:13:55,349 | INFO | justeat | Logger is working
+2026-11-21 03:16:01,622 | INFO | justeat | Logger is working
+2026-11-21 03:16:04,929 | INFO | justeat | Fetching restaurants with filters: name=, location=, cuisine=, min_price=None, max_price=None
+2026-11-21 03:16:05,801 | INFO | justeat | Found 0 restaurants.
+2026-11-21 03:16:05,809 | INFO | justeat | Fetching restaurants with filters: name=, location=, cuisine=, min_price=None, max_price=None
+2026-11-21 03:16:06,658 | INFO | justeat | Found 0 restaurants.
+2026-11-21 03:16:17,480 | INFO | justeat | Fetching recommendations for user 4.
+2026-11-21 03:16:17,891 | INFO | justeat | No cuisine preference found. Checking order history.
+2026-11-21 03:16:18,172 | INFO | justeat | No order history found. Returning popular restaurants.
+2026-11-21 03:16:22,302 | INFO | justeat | Fetching recommendations for user 4.
+2026-11-21 03:16:22,735 | INFO | justeat | No cuisine preference found. Checking order history.
+2026-11-21 03:16:22,857 | INFO | justeat | Fetching preferences for user 4.
+2026-11-21 03:16:23,032 | INFO | justeat | No order history found. Returning popular restaurants.
+2026-11-21 03:16:26,212 | INFO | justeat | Fetching preferences for user 4.
+2026-11-21 03:16:28,623 | INFO | justeat | Fetching favorite restaurants for user 4.
+2026-11-21 03:16:29,806 | INFO | justeat | Fetching favorite restaurants for user 4.

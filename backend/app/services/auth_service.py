@@ -26,3 +26,36 @@ def login(db: Session, email: str, password: str):
     )
 
     return token
+
+
+from app.repositories.user_repository import get_user_by_email
+from app.utils.security import hash_password
+from app.models.user import User
+from sqlalchemy.orm import Session
+from fastapi import HTTPException, status
+
+
+def register_user(db: Session, user_data):
+    existing_user = get_user_by_email(
+        db=db,
+        email=user_data.email
+    )
+
+    if existing_user:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Email already registered"
+        )
+
+    new_user = User(
+        username=user_data.username,
+        email=user_data.email,
+        hashed_password=hash_password(user_data.password),
+        role="customer"
+    )
+
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+
+    return new_user
